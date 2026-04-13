@@ -3,128 +3,417 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FoodLogistic | Distribució i Logística Alimentària</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    
+    <title>FoodLogistic | Líders en Distribució Alimentària</title>
     <style>
-        /* --- Variables CSS --- */
+        /* VARIABLES I CONFIGURACIÓ GENERAL */
         :root {
-            --color-primary: #1a1a1a;       /* Negre elegant */
-            --color-secondary: #4a4a4a;     /* Gris fosc */
-            --color-accent: #2e7d32;        /* Verd corporatiu per alimentació */
-            --color-bg: #ffffff;            /* Fons principal blanc */
-            --color-bg-alt: #f9f9f9;        /* Fons alternatiu suau */
-            --color-border: #e0e0e0;
-            --font-main: 'Inter', sans-serif;
-            --spacing-sm: 1rem;
-            --spacing-md: 2rem;
-            --spacing-lg: 4rem;
+            --primary: #1a2a3a; /* Blau fosc logístic */
+            --accent: #e67e22;  /* Taronja d'acció */
+            --bg-light: #f9f9f9;
+            --text-dark: #333;
+            --text-light: #666;
+            --white: #ffffff;
             --transition: all 0.3s ease;
+            --font-main: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
         }
 
-        /* --- Reset bàsic --- */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        html {
+        body {
+            font-family: var(--font-main);
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--white);
             scroll-behavior: smooth;
         }
 
-        body {
-            font-family: var(--font-main);
-            color: var(--color-primary);
-            background-color: var(--color-bg);
-            line-height: 1.6;
-            font-weight: 300;
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        /* --- Tipografia --- */
+        /* TIPOGRAFIA */
         h1, h2, h3 {
-            font-weight: 600;
             line-height: 1.2;
-            color: var(--color-primary);
+            font-weight: 700;
         }
 
-        h2 {
-            font-size: 2rem;
-            margin-bottom: var(--spacing-sm);
+        a {
+            text-decoration: none;
+            color: inherit;
         }
 
-        p {
-            color: var(--color-secondary);
-            margin-bottom: var(--spacing-sm);
+        ul {
+            list-style: none;
         }
 
-        .section-subtitle {
-            text-align: center;
-            max-width: 600px;
-            margin: 0 auto var(--spacing-lg) auto;
-        }
-
-        .section-title {
-            text-align: center;
-        }
-
-        /* --- Estructura Global --- */
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 var(--spacing-sm);
-        }
-
-        section {
-            padding: var(--spacing-lg) 0;
-        }
-
-        /* --- Header i Navegació --- */
+        /* NAVEGACIÓ */
         header {
-            background-color: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(5px);
             position: fixed;
-            width: 100%;
             top: 0;
-            z-index: 1000;
-            border-bottom: 1px solid var(--color-border);
-        }
-
-        nav {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 1rem 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            height: 70px;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
 
         .logo {
             font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--color-primary);
-            text-decoration: none;
-            letter-spacing: -0.5px;
+            font-weight: 800;
+            color: var(--primary);
+            letter-spacing: -1px;
         }
 
         .logo span {
-            color: var(--color-accent);
+            color: var(--accent);
         }
 
-        .nav-links {
-            list-style: none;
-            display: none; /* Amagat per defecte a mòbil per simplificar, es podria afegir un menú hamburguesa */
+        nav ul {
+            display: flex;
+            gap: 2rem;
         }
 
-        .nav-links li {
-            margin-left: var(--spacing-md);
+        nav ul li a {
+            font-weight: 500;
+            transition: var(--transition);
         }
+
+        nav ul li a:hover {
+            color: var(--accent);
+        }
+
+        /* HERO SECTION */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(26, 42, 58, 0.8), rgba(26, 42, 58, 0.8)), 
+                        url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=2000') no-repeat center center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+            padding: 0 1rem;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            background: var(--accent);
+            color: var(--white);
+            border-radius: 4px;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #d35400;
+            transform: translateY(-2px);
+        }
+
+        /* SECCIONS GENERALS */
+        section {
+            padding: 100px 10%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background: var(--accent);
+            margin: 0 auto;
+        }
+
+        /* SERVEIS */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            padding: 2.5rem;
+            background: var(--bg-light);
+            border-radius: 8px;
+            transition: var(--transition);
+            border-bottom: 4px solid transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-bottom: 4px solid var(--accent);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .service-card h3 {
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        /* SOBRE NOSALTRES */
+        .about-container {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+            flex-wrap: wrap;
+        }
+
+        .about-content {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 20px 20px 0px var(--bg-light);
+        }
+
+        /* CONTACTE (FORMULARI) */
+        .contact-wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--bg-light);
+            padding: 3rem;
+            border-radius: 8px;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .form-group input, 
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        .form-group input:focus, 
+        .form-group textarea:focus {
+            border-color: var(--primary);
+        }
+
+        textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        /* PEU DE PÀGINA */
+        footer {
+            background: var(--primary);
+            color: var(--white);
+            padding: 4rem 10% 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            margin-bottom: 2rem;
+        }
+
+        .copyright {
+            font-size: 0.9rem;
+            opacity: 0.6;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 2rem;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            nav { display: none; } /* Per simplicitat en el prototip, amaguem el menú en mòbil */
+            section { padding: 60px 5%; }
+            .about-container { gap: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Food<span>Logistic</span></div>
+        <nav>
+            <ul>
+                <li><a href="#inici">Inici</a></li>
+                <li><a href="#serveis">Serveis</a></li>
+                <li><a href="#sobre">Sobre nosaltres</a></li>
+                <li><a href="#contacte">Contacte</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="inici" class="hero">
+        <h1>Connectant la frescor amb la seva taula</h1>
+        <p>Líders nacionals en logística i distribució alimentària amb control tèrmic d'última generació.</p>
+        <a href="#serveis" class="btn">Explora els Serveis</a>
+    </section>
+
+    <section id="serveis">
+        <div class="section-title">
+            <h2>Els Nostres Serveis</h2>
+            <p>Solucions integrals per a tota la cadena de subministrament.</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Transport Refrigerat</h3>
+                <p>Flota moderna equipada amb sistemes de control de temperatura constant per a productes frescos i congelats.</p>
+            </div>
+            <div class="service-card">
+                <h3>Emmagatzematge Intel·ligent</h3>
+                <p>Centres logístics estratègics amb gestió d'estocs automatitzada i zones multitemperatura.</p>
+            </div>
+            <div class="service-card">
+                <h3>Distribució Capil·lar</h3>
+                <p>Arribem a qualsevol punt del territori nacional amb la màxima eficiència i puntualitat garantida.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="sobre" style="background-color: var(--white);">
+        <div class="about-container">
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1580674684081-7617fbf3d745?auto=format&fit=crop&q=80&w=1000" alt="Magatzem FoodLogistic">
+            </div>
+            <div class="about-content">
+                <div class="section-title" style="text-align: left;">
+                    <h2 style="margin: 0;">Compromís i Qualitat</h2>
+                </div>
+                <p>Amb més de 20 anys d'experiència, a FoodLogistic entenem que el transport alimentari no és només moure caixes, sinó preservar la salut dels consumidors.</p>
+                <br>
+                <p>La nostra tecnologia ens permet traçar cada enviament en temps real, assegurant que la cadena de fred mai es trenqui.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacte" style="background-color: var(--bg-light);">
+        <div class="section-title">
+            <h2>Contacte</h2>
+            <p>Estàs preparat per optimitzar la teva logística? Parlem-ne.</p>
+        </div>
+        <div class="contact-wrapper">
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="nom">Nom Complet</label>
+                    <input type="text" id="nom" name="nom" placeholder="El teu nom" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Correu Electrònic</label>
+                    <input type="email" id="email" name="email" placeholder="correu@empresa.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="telefon">Telèfon de contacte</label>
+                    <input type="tel" id="telefon" name="telefon" placeholder="600 000 000" required>
+                </div>
+                <div class="form-group">
+                    <label for="missatge">Missatge</label>
+                    <textarea id="missatge" name="missatge" placeholder="Com et podem ajudar?" required></textarea>
+                </div>
+                <button type="submit" class="btn" style="width: 100%;">Enviar Sol·licitud</button>
+            </form>
+            <div id="formFeedback" style="display:none; margin-top: 1rem; text-align: center; color: green; font-weight: bold;">
+                Gràcies! Hem rebut la teva consulta correctament.
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="logo" style="color: white; margin-bottom: 1rem;">Food<span>Logistic</span></div>
+            <p>La vostra confiança és el nostre motor.</p>
+        </div>
+        <div class="copyright">
+            &copy; 2026 FoodLogistic S.A. Tots els drets reservats.
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('contactForm');
+            const feedback = document.getElementById('formFeedback');
+
+            // Gestió del formulari
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                // Simulació d'enviament
+                const formData = {
+                    nom: document.getElementById('nom').value,
+                    email: document.getElementById('email').value,
+                    telefon: document.getElementById('telefon').value,
+                    missatge: document.getElementById('missatge').value
+                };
+
+                console.log('Dades recollides:', formData);
+
+                // Feedback visual
+                form.style.opacity = '0.5';
+                form.style.pointerEvents = 'none';
+                feedback.style.display = 'block';
+
+                // Reset del formulari després de 3 segons per a la demo
+                setTimeout(() => {
+                    form.reset();
+                    form.style.opacity = '1';
+                    form.style.pointerEvents = 'all';
+                    feedback.style.display = 'none';
+                    alert('Missatge simulat enviat amb èxit!');
+                }, 2000);
+            });
+
+            // Canvi de color del header al fer scroll
+            window.addEventListener('scroll', () => {
+                const header = document.querySelector('header');
+                if (window.scrollY > 50) {
+                    header.style.padding = '0.5rem 5%';
+                    header.style.background = '#ffffff';
+                } else {
+                    header.style.padding = '1rem 5%';
+                    header.style.background = 'rgba(255, 255, 255, 0.95)';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
 
         
