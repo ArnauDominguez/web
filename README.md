@@ -1,10 +1,10 @@
-# Web Corporativa de [Nom de l'Empresa]
+# Web Corporativa de [FoodLogistic]
 
-Aquesta és la web corporativa de [Nom de l'Empresa], una empresa fictícia dedicada a [descripció breu de l'empresa] dins el mòdul *Projecte Intermodular*.
+Aquesta és la web corporativa de [FoodLogistic], una empresa fictícia dedicada a [descripció breu de l'empresa] dins el mòdul *Projecte Intermodular*.
 
 ## Demostració
 
-[🌐 URL de la web](https://[usuari].github.io/[nom-del-repositori])
+[🌐 URL de la web](https://arnaudominguez.github.io/web/)
 
 ## Tecnologies Utilitzades
 
@@ -16,4 +16,4 @@ Per la creació d'aquesta web, s'han utilitzat les següents tecnologies i eines
 
 ## Autor
 
-👤 [El teu nom]
+👤 [Arnau Domínguez Turull]
