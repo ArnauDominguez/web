@@ -14,6 +14,8 @@ Per la creació d'aquesta web, s'han utilitzat les següents tecnologies i eines
 - HTML5/CSS3
 - Statcounter per l'analítica
 
+[Codi de la web](docs)
+
 ## Autor
 
 👤 Arnau Domínguez Turull
