@@ -18,5 +18,4 @@ Per la creació d'aquesta web, s'han utilitzat les següents tecnologies i eines
 
 👤 Arnau Domínguez Turull
 
-
-
+[Tornar a la presentació personal](https://github.com/ArnauDominguez)
